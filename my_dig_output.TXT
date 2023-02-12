@@ -1,0 +1,111 @@
+python MydigResolverPartA.py www.cnn.com A 
+
+Output: 
+QUESTION SECTION:
+www.cnn.com. IN A
+
+
+ANSWER SECTION:
+www.cnn.com. 300 IN CNAME cnn-tls.map.fastly.net.
+
+Query Time: 0.10800409317016602sec
+Sat Sep 17 12:16:05 2022
+MSG SIZE rcvd: 48
+
+--------------------------------------------------------
+python MydigResolverPartA.py google.com NS  
+
+Output:  
+QUESTION SECTION:
+google.com. IN NS
+
+
+ANSWER SECTION:
+google.com. 345600 IN NS ns3.google.com.
+google.com. 345600 IN NS ns2.google.com.
+google.com. 345600 IN NS ns4.google.com.
+google.com. 345600 IN NS ns1.google.com.
+
+Query Time: 0.07085394859313965sec
+Sat Sep 17 12:17:47 2022
+MSG SIZE rcvd: 48
+
+---------------------------------------------------------
+python MydigResolverPartA.py verisigninc.com NS
+
+Output:
+QUESTION SECTION:
+verisigninc.com. IN NS
+
+
+ANSWER SECTION:
+verisigninc.com. 86400 IN NS av2.nstld.com.
+verisigninc.com. 86400 IN NS av4.nstld.com.
+verisigninc.com. 86400 IN NS av1.nstld.com.
+verisigninc.com. 86400 IN NS av3.nstld.com.
+
+Query Time: 0.09197998046875sec
+Sat Sep 17 12:18:30 2022
+MSG SIZE rcvd: 48
+
+----------------------------------------------------------
+python MydigResolverPartA.py verisigninc.com MX
+
+Output:
+QUESTION SECTION:
+verisigninc.com. IN MX
+
+
+ANSWER SECTION:
+verisigninc.com. 300 IN MX 10 mail2.verisign.com.
+verisigninc.com. 300 IN MX 10 mail4.verisign.com.
+verisigninc.com. 300 IN MX 10 mail6.verisign.com.
+verisigninc.com. 300 IN MX 10 mail1.verisign.com.
+verisigninc.com. 300 IN MX 10 mail3.verisign.com.
+verisigninc.com. 300 IN MX 10 mail5.verisign.com.
+
+Query Time: 0.08173370361328125sec
+Sat Sep 17 12:19:05 2022
+MSG SIZE rcvd: 48
+
+-----------------------------------------------------------
+python MydigResolverPartA.py www.youtube.com A
+
+Output:
+QUESTION SECTION:
+www.youtube.com. IN A
+
+
+ANSWER SECTION:
+www.youtube.com. 86400 IN CNAME youtube-ui.l.google.com.
+youtube-ui.l.google.com. 300 IN A 142.250.64.110
+youtube-ui.l.google.com. 300 IN A 142.250.72.110
+youtube-ui.l.google.com. 300 IN A 142.250.80.14
+youtube-ui.l.google.com. 300 IN A 142.250.80.46
+youtube-ui.l.google.com. 300 IN A 142.250.80.78
+youtube-ui.l.google.com. 300 IN A 142.250.80.110
+youtube-ui.l.google.com. 300 IN A 142.250.176.206
+youtube-ui.l.google.com. 300 IN A 142.251.40.206
+
+
+Query Time: 0.5767409801483154sec
+Sun Sep 18 22:25:01 2022
+MSG SIZE rcvd: 48
+
+-----------------------------------------------------------
+python MydigResolverPartA.py google.co.jp NS   
+
+Output:
+QUESTION SECTION:
+google.co.jp. IN NS
+
+
+ANSWER SECTION:
+google.co.jp. 345600 IN NS ns2.google.com.
+google.co.jp. 345600 IN NS ns4.google.com.
+google.co.jp. 345600 IN NS ns3.google.com.
+google.co.jp. 345600 IN NS ns1.google.com.
+
+Query Time: 2.49646258354187sec
+Sun Sep 18 22:28:32 2022
+MSG SIZE rcvd: 48

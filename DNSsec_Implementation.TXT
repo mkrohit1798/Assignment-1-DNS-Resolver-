@@ -1,0 +1,14 @@
+DNSsec Implementation Details
+------------------------------------------------------------
+
+resolveDNS(domain, type, rootservers, zone, ds_parent): 
+We first retrieve the domain name from the input query. We then begin the process starting
+with the validation of root servers which sign the root DNSKey RRset, this process is performed recursively on the top level domains followed by the sub-level domains.
+
+On successful validation from the root, we go the top-level domains and perform their validation. We retrieve the RRset, the delegation signer value and then we proceed to perform the validation again. 
+
+In the validation, we request the RRsig(aka the digital signature of the RRset) and the respective zone's public Key Signing Key(KSK). For further validation, we perform the "Chain of Trust Validation" to check whether the KSK and RRsig were tampered by some malicious attacker. If validation is successful, we proceed to the sub level domains, otherwise an exception "Validation failed" is thrown.
+
+To check whether DNSsec implemented by the domain is working, we evaluate the parent DS record and the hash/digest of the child by using the public Key Signing Key. If a successful decryption of RRsig yields the original RRset, then we conclude that the service is working fine.
+
+For the case "DNSsec not supported" if we're unable to receive the digital signature OR if the digital signature is of type NSEC or NSEC3(i.e a record that's termed as non-existent) of the RRset and the public Key Signing Key at any level, we return that DnSsec isn't supported.

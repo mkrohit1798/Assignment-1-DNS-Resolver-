@@ -1,0 +1,87 @@
+python MyDNSsecPartBPartB.py www.amazon.com A
+
+Output:        
+DNSSEC not supported....
+--------------------------------------------------
+python MyDNSsecPartB.py www.discord.com A
+
+Output:
+Validating chain of trust
+Validating chain of trust
+id 39392
+opcode QUERY
+rcode NOERROR
+flags QR AA RD
+edns 0
+payload 1232
+;QUESTION
+www.discord.com. IN A
+;ANSWER
+www.discord.com. 300 IN A 162.159.137.232
+www.discord.com. 300 IN A 162.159.135.232
+www.discord.com. 300 IN A 162.159.128.233
+www.discord.com. 300 IN A 162.159.136.232
+www.discord.com. 300 IN A 162.159.138.232
+;AUTHORITY
+;ADDITIONAL
+
+---------------------------------------------------
+python MyDNSsecPartB.py www.cloudflare.com A
+
+Output:
+
+Validating chain of trust
+no RRSIGs validated
+DNSSEC configured but failed to verify digital signature...
+
+---------------------------------------------------
+python MyDNSsecPartB.py aron.ns.cloudflare.com A
+
+Output:
+Validating chain of trust
+Validating chain of trust
+id 60250
+opcode QUERY
+rcode NOERROR
+flags QR AA RD
+edns 0
+payload 1232
+;QUESTION
+aron.ns.cloudflare.com. IN A
+;ANSWER
+aron.ns.cloudflare.com. 86353 IN A 108.162.192.69
+aron.ns.cloudflare.com. 86353 IN A 172.64.32.69
+aron.ns.cloudflare.com. 86353 IN A 173.245.58.69
+;AUTHORITY
+;ADDITIONAL
+
+----------------------------------------------------
+python MyDNSsecPartB.py verisigninc.com A    
+
+Output: 
+Validating chain of trust
+Validating chain of trust
+id 63730
+opcode QUERY
+rcode NOERROR
+flags QR AA RD
+edns 0
+payload 4096
+;QUESTION
+verisigninc.com. IN A
+;ANSWER
+verisigninc.com. 60 IN A 209.131.162.45
+verisigninc.com. 60 IN A 69.58.187.40
+;AUTHORITY
+verisigninc.com. 86400 IN NS av2.nstld.com.
+verisigninc.com. 86400 IN NS av4.nstld.com.
+verisigninc.com. 86400 IN NS av1.nstld.com.
+verisigninc.com. 86400 IN NS av3.nstld.com.
+;ADDITIONAL
+
+------------------------------------------------------
+python MyDNSsecPartB.py www.dnssec-failed.org/ A
+
+Output:
+owner names do not match
+DNSsec configured but failed to verify digital signature...
